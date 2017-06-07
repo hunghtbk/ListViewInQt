@@ -16,7 +16,7 @@ Rectangle {
     }
 
     Text {
-        id: text2
+        id: text3
         x: 425
         y: 13
         width: 118
