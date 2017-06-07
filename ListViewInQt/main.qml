@@ -7,15 +7,10 @@ Window {
     height: 480
     title: qsTr("Hello World")
 
-    MouseArea {
+    ListView {
+        id: _listview
         anchors.fill: parent
-        onClicked: {
-            Qt.quit();
-        }
-    }
-
-    Text {
-        text: qsTr("Hello World")
-        anchors.centerIn: parent
+        delegate: ListDelegate{}
+        model: ListModel1 {}
     }
 }
