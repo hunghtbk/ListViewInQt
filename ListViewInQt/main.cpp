@@ -6,6 +6,7 @@
 #include <qqml.h>
 #include <QtQuick/qquickitem.h>
 #include <QtQuick/qquickview.h>
+#include <QQmlApplicationEngine>
 
 int main(int argc, char ** argv)
 {
@@ -16,13 +17,11 @@ int main(int argc, char ** argv)
     model.addAnimal(Animal("Polar bear", "Large"));
     model.addAnimal(Animal("Quoll", "Small"));
 
-    QQuickView view;
-    view.setResizeMode(QQuickView::SizeRootObjectToView);
-    QQmlContext *ctxt = view.rootContext();
-    ctxt->setContextProperty("myModel", &model);
+    QQmlApplicationEngine engine;
+    QQmlContext *ctx = engine.rootContext();
+    ctx->setContextProperty("myModel", &model);
 
-    view.setSource(QUrl("qrc:main.qml"));
-    view.show();
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();
 }
