@@ -1,8 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>ListDelegate.qml</file>
-        <file>ListModel1.qml</file>
-        <file>ListModel.qml</file>
     </qresource>
 </RCC>

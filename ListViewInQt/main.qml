@@ -1,16 +1,8 @@
-import QtQuick 2.3
-import QtQuick.Window 2.2
+import QtQuick 2.0
 
-Window {
-    visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+ListView {
+    width: 200; height: 250
 
-    ListView {
-        id: _listview
-        anchors.fill: parent
-        delegate: ListDelegate{}
-        model: ListModel1 {}
-    }
+    model: myModel
+    delegate: Text { text: "Animal: " + type + ", " + size }
 }
